@@ -1,0 +1,27 @@
+ //tab1
+        $(function(){
+            $('.tabnav ul li').click(function(){
+                $(this).addClass('on').siblings().removeClass('on');
+                $('.main-part-tab>div:eq('+$(this).index()+')').show().siblings().hide();
+            });
+            $('.tabmenu ul li').click(function(){
+                $(this).addClass('hover').siblings().removeClass('hover');
+                $('.index-newslistbox>div:eq('+$(this).index()+')').show().siblings().hide();
+            });
+            $('.newsmenu-tab ul li').click(function(){
+                $(this).addClass('ck').siblings().removeClass('ck');
+                $('.newspiclist-tab>div:eq('+$(this).index()+')').show().siblings().hide();
+            });
+            var _line=parseInt($(window).height()/2);
+            $(window).scroll(function(){
+                if ($(window).scrollTop()>2100) {
+                    $('.menufixed').css({'position':'fixed','top':0})
+                }else{
+                    $('.menufixed').css({'position':'','top':''})
+                };
+            });
+        });
+
+
+
+
